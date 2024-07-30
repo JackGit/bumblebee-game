@@ -4,7 +4,12 @@ from funasr import AutoModel
 model = AutoModel(model="paraformer-zh",  vad_model="fsmn-vad",  punc_model="ct-punc", 
                   # spk_model="cam++", 
                   )
-res = model.generate(input=f"../data/demo_audio_01.wav", 
+
+audio_file = '../data/demo_audio_01.wav'
+audio_file = '../data/FCRS_audio.wav'
+
+
+res = model.generate(input=audio_file, 
                      batch_size_s=300, 
                      hotword='魔搭',
                      sentence_timestamp=True
@@ -32,5 +37,5 @@ import json
 text_content = json.dumps(sentences, ensure_ascii=False)
 
 # 将拼接后的字符串保存到txt文件中
-with open('output.txt', 'w', encoding='utf-8') as file:
+with open('output_FCRS_sentences.js', 'w', encoding='utf-8') as file:
     file.write(text_content)

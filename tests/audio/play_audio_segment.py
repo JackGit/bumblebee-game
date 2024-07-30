@@ -6,8 +6,8 @@ def play_audio_segment(audio_file, start_time, end_time):
     audio = AudioSegment.from_file(audio_file)
     
     # 将时间转换为毫秒
-    start_ms = start_time * 1000
-    end_ms = end_time * 1000
+    start_ms = start_time
+    end_ms = end_time
     
     # 提取指定时间段的音频
     segment = audio[start_ms:end_ms]
@@ -23,7 +23,11 @@ def play_audio_segment(audio_file, start_time, end_time):
 if __name__ == "__main__":
   # 示例使用
   audio_file = "../data/demo_audio_01.wav"
-  start_time = 3030/1000  # 开始时间，单位为秒, sentence_info[i].timestamp[0][0]
-  end_time = 4650/1000   # 结束时间，单位为秒, sentence_info[i].timestamp[n][1]
+  start_time = 3030 
+  end_time = 4650 
+
+  audio_file = "../data/FCRS_audio.wav"
+  start_time = 6381620
+  end_time = 6383785
 
   play_audio_segment(audio_file, start_time, end_time)
