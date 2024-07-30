@@ -27,7 +27,7 @@ if __name__ == "__main__":
   end_time = 4650 
 
   audio_file = "../data/FCRS_audio.wav"
-  start_time = 6381620
-  end_time = 6383785
+  start_time = 460270
+  end_time = 463110
 
   play_audio_segment(audio_file, start_time, end_time)
