@@ -11,7 +11,6 @@ audio_file = '../data/FCRS_audio.wav'
 
 res = model.generate(input=audio_file, 
                      batch_size_s=300, 
-                     hotword='魔搭',
                      sentence_timestamp=True
                     )
 print(res)
@@ -29,7 +28,8 @@ for i in range(len(sentence_info)):
     sentences.append({
         'text': text,
         'start': start,
-        'end': end
+        'end': end,
+        'file': file_name
     })
 
 # sentences into json string
